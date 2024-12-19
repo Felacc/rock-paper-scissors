@@ -27,6 +27,9 @@ console.log("Testing");
 let computerChoice = getComputerChoice();
 console.log(computerChoice);
 
+let humanChoice = getHumanChoice();
+console.log(humanChoice);
+
 function getComputerChoice() {
     const minCeiled = Math.ceil(1);
     const maxFloored = Math.floor(3);
@@ -44,4 +47,20 @@ function getComputerChoice() {
     if (randomNumber === 3) {
         return "scissors";
     }
+}
+
+function getHumanChoice() {
+    let humanChoice = prompt("Your move.", "");
+    while (true) {
+
+    humanChoice = humanChoice.trim();
+    humanChoice = humanChoice.toLowerCase();
+
+        if (!(humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors")) {
+            humanChoice = prompt("Invalid move.", "");
+        } else {
+            return humanChoice;
+        }
+    }
+    
 }
