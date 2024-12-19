@@ -23,3 +23,25 @@ console.log("Testing");
 //     IF computer chose paper and human chose rock, display message that human wins the round, and increment human's score by 1
 //     etc...
 // FOR 5 rounds, record scores, and declare a winner at the end
+
+let computerChoice = getComputerChoice();
+console.log(computerChoice);
+
+function getComputerChoice() {
+    const minCeiled = Math.ceil(1);
+    const maxFloored = Math.floor(3);
+    let randomNumber = Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // get a random number between 1 and 3 inclusive, code from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+    console.log(randomNumber);
+
+    if (randomNumber === 1) {
+        return "rock";
+    }
+
+    if (randomNumber === 2) {
+        return "paper";
+    }
+
+    if (randomNumber === 3) {
+        return "scissors";
+    }
+}
