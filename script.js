@@ -22,19 +22,16 @@
 // FOR 5 rounds, record scores, and declare a winner at the end
 
 
-// Initialize scores and log the current scores
+// Global variables:
+// Scores declared, initialized and set to 0
+// Choice variables declared, but not set to anything yet
 let computerScore = 0;
 let humanScore = 0;
-console.log("Player Score: " + humanScore + "\nComputer Score: " + computerScore);
+let computerChoice;
+let humanChoice;
 
-// Get rock-paper-scissors choices from human and computer
-let computerChoice = getComputerChoice();
-let humanChoice = getHumanChoice();
-
-// Play a round using choices as input
-// Output results
-playRound(computerChoice, humanChoice);
-console.log("Player Score: " + humanScore + "\nComputer Score: " + computerScore);
+// Start game of RPS
+playGame();
 
 // Functions
 function getComputerChoice() {
@@ -62,7 +59,7 @@ function getHumanChoice() {
         // format string
         humanChoice = humanChoice.trim();
         humanChoice = humanChoice.toLowerCase();
-        
+
         // check if inputted value is a not valid move, prompt fo`r a new input, then loop
         // if input is valid return value
         if (!(humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors")) {
@@ -113,4 +110,34 @@ function playRound(computerChoice, humanChoice) {
             humanScore += 1;
         }
     }
+}
+
+function playGame() {
+    // Display current scores
+    console.log("Initial Scores\n" + "Player Score: " + humanScore + "\nComputer Score: " + computerScore);
+
+    // Play 5 rounds
+    // Output results
+    for (let i = 0; i < 5; i++) {
+        // Get rock-paper-scissors choices from human and computer
+        computerChoice = getComputerChoice();
+        humanChoice = getHumanChoice();
+        // Play the round
+        playRound(computerChoice, humanChoice);
+    }
+
+    console.log("Final Scores\n" + "Player Score: " + humanScore + "\nComputer Score: " + computerScore);
+
+    if (humanScore == computerScore) {
+        console.log("The game is a tie!")
+    }
+
+    if (humanScore > computerScore) {
+        console.log("You won the game!")
+    }
+
+    if (humanScore < computerScore) {
+        console.log("You lost the game.")
+    }
+
 }
