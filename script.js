@@ -1,6 +1,3 @@
-console.log("Testing");
-
-
 // Pseudocode
 // Create variable for human score
 // Create variable for computer score
@@ -24,25 +21,26 @@ console.log("Testing");
 //     etc...
 // FOR 5 rounds, record scores, and declare a winner at the end
 
+
+// Initialize scores and log the current scores
 let computerScore = 0;
 let humanScore = 0;
 console.log("Player Score: " + humanScore + "\nComputer Score: " + computerScore);
+
+// Get rock-paper-scissors choices from human and computer
 let computerChoice = getComputerChoice();
-console.log(computerChoice);
-
 let humanChoice = getHumanChoice();
-console.log(humanChoice);
 
+// Play a round using choices as input
+// Output results
 playRound(computerChoice, humanChoice);
 console.log("Player Score: " + humanScore + "\nComputer Score: " + computerScore);
 
-
-
+// Functions
 function getComputerChoice() {
     const minCeiled = Math.ceil(1);
     const maxFloored = Math.floor(3);
     let randomNumber = Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // get a random number between 1 and 3 inclusive, code from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-    console.log(randomNumber);
 
     if (randomNumber === 1) {
         return "rock";
