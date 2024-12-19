@@ -27,12 +27,16 @@ console.log("Testing");
 let computerScore = 0;
 let humanScore = 0;
 console.log("Player Score: " + humanScore + "\nComputer Score: " + computerScore);
-
 let computerChoice = getComputerChoice();
 console.log(computerChoice);
 
 let humanChoice = getHumanChoice();
 console.log(humanChoice);
+
+playRound(computerChoice, humanChoice);
+console.log("Player Score: " + humanScore + "\nComputer Score: " + computerScore);
+
+
 
 function getComputerChoice() {
     const minCeiled = Math.ceil(1);
@@ -67,6 +71,48 @@ function getHumanChoice() {
             humanChoice = prompt("Invalid move.", "");
         } else {
             return humanChoice;
+        }
+    }
+}
+
+function playRound(computerChoice, humanChoice) {
+    if (computerChoice === humanChoice) {
+        console.log("It's a tie!")
+    }
+
+    if (humanChoice === "rock") {
+        if (computerChoice === "paper") {
+            console.log("You lose! Paper beats Rock.")
+            computerScore += 1;
+        }
+
+        if (computerChoice === "scissors") {
+            console.log("You win! Rock beats Scissors.")
+            humanScore += 1;
+        }
+    }
+
+    if (humanChoice === "paper") {
+        if (computerChoice === "scissors") {
+            console.log("You lose! Scissors beats Paper.")
+            computerScore += 1;
+        }
+
+        if (computerChoice === "rock") {
+            console.log("You win! Paper beats Rock.")
+            humanScore += 1;
+        }
+    }
+
+    if (humanChoice === "scissors") {
+        if (computerChoice === "rock") {
+            console.log("You lose! Rock beats Scissors.")
+            computerScore += 1;
+        }
+
+        if (computerChoice === "paper") {
+            console.log("You win! Scissors beats Paper.")
+            humanScore += 1;
         }
     }
 }
