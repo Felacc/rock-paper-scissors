@@ -24,6 +24,10 @@ console.log("Testing");
 //     etc...
 // FOR 5 rounds, record scores, and declare a winner at the end
 
+let computerScore = 0;
+let humanScore = 0;
+console.log("Player Score: " + humanScore + "\nComputer Score: " + computerScore);
+
 let computerChoice = getComputerChoice();
 console.log(computerChoice);
 
@@ -50,17 +54,19 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
+    // get initial value from user
     let humanChoice = prompt("Your move.", "");
     while (true) {
-
-    humanChoice = humanChoice.trim();
-    humanChoice = humanChoice.toLowerCase();
-
+        // format string
+        humanChoice = humanChoice.trim();
+        humanChoice = humanChoice.toLowerCase();
+        
+        // check if inputted value is a not valid move, prompt fo`r a new input, then loop
+        // if input is valid return value
         if (!(humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors")) {
             humanChoice = prompt("Invalid move.", "");
         } else {
             return humanChoice;
         }
     }
-    
 }
