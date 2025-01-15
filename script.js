@@ -116,15 +116,15 @@ function playGame() {
     // Display current scores
     console.log("Initial Scores\n" + "Player Score: " + humanScore + "\nComputer Score: " + computerScore);
 
-    // Play 5 rounds
-    // Output results
-    for (let i = 0; i < 5; i++) {
-        // Get rock-paper-scissors choices from human and computer
-        computerChoice = getComputerChoice();
-        humanChoice = getHumanChoice();
-        // Play the round
-        playRound(computerChoice, humanChoice);
-    }
+    // // Play 5 rounds
+    // // Output results
+    // for (let i = 0; i < 5; i++) {
+    //     // Get rock-paper-scissors choices from human and computer
+    //     computerChoice = getComputerChoice();
+    //     humanChoice = getHumanChoice();
+    //     // Play the round
+    //     playRound(computerChoice, humanChoice);
+    // }
 
     console.log("Final Scores\n" + "Player Score: " + humanScore + "\nComputer Score: " + computerScore);
 
