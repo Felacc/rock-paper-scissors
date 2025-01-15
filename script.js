@@ -92,7 +92,7 @@ function displayResults() {
     const body = document.querySelector("body");
     const buttons = document.querySelector(".buttons");
 
-    resultsDiv.textContent = "Your Score: " + humanScore + " Computer Score: " + computerScore;
+    resultsDiv.innerHTML = "Your Score: " + humanScore + " Computer Score: " + computerScore;
     
     // if score of 5 is reached remove buttons and display result
     if (humanScore == 5) {
@@ -100,14 +100,14 @@ function displayResults() {
         buttons.removeChild(p_btn);
         buttons.removeChild(s_btn);
 
-        resultsDiv.textContent = "You won the game!";
+        resultsDiv.innerHTML += "<br>You won the game!";
     }
 
     if (computerScore == 5) {
         buttons.removeChild(r_btn);
         buttons.removeChild(p_btn);
         buttons.removeChild(s_btn);
-        resultsDiv.textContent = "You lost the game.";
+        resultsDiv.innerHTML += "<br>You lost the game.";
     }
 
     body.appendChild(resultsDiv);
