@@ -20,8 +20,7 @@ p_btn.addEventListener("click", () => {
 s_btn.addEventListener("click", () => {
     playRound(getComputerChoice(), "scissors");
 });
-// Start game of RPS
-playGame();
+
 
 // Functions
 function getComputerChoice() {
@@ -41,24 +40,6 @@ function getComputerChoice() {
         return "scissors";
     }
 }
-
-// function getHumanChoice() {
-//     // get initial value from user
-//     let humanChoice = prompt("Your move.", "");
-//     while (true) {
-//         // format string
-//         humanChoice = humanChoice.trim();
-//         humanChoice = humanChoice.toLowerCase();
-
-//         // check if inputted value is a not valid move, prompt fo`r a new input, then loop
-//         // if input is valid return value
-//         if (!(humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors")) {
-//             humanChoice = prompt("Invalid move.", "");
-//         } else {
-//             return humanChoice;
-//         }
-//     }
-// }
 
 function playRound(computerChoice, humanChoice) {
     if (computerChoice === humanChoice) {
@@ -105,16 +86,6 @@ function playRound(computerChoice, humanChoice) {
 function playGame() {
     // Display current scores
     console.log("Initial Scores\n" + "Player Score: " + humanScore + "\nComputer Score: " + computerScore);
-
-    // // Play 5 rounds
-    // // Output results
-    // for (let i = 0; i < 5; i++) {
-    //     // Get rock-paper-scissors choices from human and computer
-    //     computerChoice = getComputerChoice();
-    //     humanChoice = getHumanChoice();
-    //     // Play the round
-    //     playRound(computerChoice, humanChoice);
-    // }
 
     console.log("Final Scores\n" + "Player Score: " + humanScore + "\nComputer Score: " + computerScore);
 
